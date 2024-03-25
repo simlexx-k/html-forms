@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="form-title">
+        <h1>Student Registration Form</h1>
+    </div>
+    <form method="post">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required oninvalid="this.setCustomValidity('Please enter your name')" oninput="this.setCustomValidity('')">
+            
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required oninvalid="this.setCustomValidity('Please enter your date of birth')" oninput="this.setCustomValidity('')">
+            
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male" required oninvalid="this.setCustomValidity('Please select your gender')" oninput="this.setCustomValidity('')">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female" required oninput="this.setCustomValidity('')">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="Other" required oninput="this.setCustomValidity('')">
+            <label for="other">Other</label>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Contact Information</legend>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required oninvalid="this.setCustomValidity('Please enter your address')" oninput="this.setCustomValidity('')"></textarea>
+            
+            <label for="telephone">Telephone:</label>
+            <input type="tel" id="telephone" name="telephone" required oninvalid="this.setCustomValidity('Please enter your telephone number')" oninput="this.setCustomValidity('')">
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required oninvalid="this.setCustomValidity('Please enter your email address')" oninput="this.setCustomValidity('')">
+        </fieldset>
+        
+        <fieldset>
+            <legend>Course Information</legend>
+            <label for="course">Course:</label>
+            <select id="course" name="course" required oninvalid="this.setCustomValidity('Please select a course')" oninput="this.setCustomValidity('')">
+                <option value="">Please select a course</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Business Administration">Business Administration</option>
+                <option value="Psychology">Psychology</option>
+                <!-- Additional courses can be added here -->
+            </select>
+        </fieldset>
+        
+        <button type="submit">Register</button>
+        <button type="reset">Cancel</button>
+    </form>
+    <footer class="site-footer">
+        © 2024 HTMLForms
+    </footer>
+</body>
+</html>
