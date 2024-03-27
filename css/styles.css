@@ -1,16 +1,16 @@
 /* Improved styling with responsiveness */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
+  background-color: #F5D7DB;
 }
 
 form {
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #473E66;
   border-radius: 5px;
-  background-color: white;
+  background-color: #ffffff;
 }
 
 label {
@@ -28,12 +28,12 @@ textarea {
   padding: 8px;
   margin-top: 5px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #473E66;
   border-radius: 4px;
 }
 
 button {
-  background-color: #007bff;
+  background-color: #F1916D;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -43,7 +43,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #BD83B8;
 }
 
 /* Responsive design adjustments */
@@ -61,7 +61,7 @@ button:hover {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #333;
+  color: #06142E;
 }
 
 /* Footer styling */
@@ -69,5 +69,5 @@ button:hover {
   text-align: center;
   margin-top: 40px;
   font-size: 0.8em;
-  color: #333;
+  color: #1B3358;
 }
