@@ -5,40 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Registration Form</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script defer>
-        document.addEventListener("DOMContentLoaded", function() {
-            const form = document.querySelector("form");
-            form.addEventListener("submit", function(event) {
-                event.preventDefault();
-                const formData = new FormData(form);
-                const jsonData = {};
-                formData.forEach((value, key) => { jsonData[key] = value; });
-                fetch("http://localhost:3000/register", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(jsonData),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data);
-                    alert("Registration successful!");
-                    form.reset(); // Reset form after successful submission
-                })
-                .catch((error) => {
-                    console.error("Error:", error);
-                    alert("An error occurred during registration.");
-                });
-            });
-        });
-    </script>
 </head>
 <body>
     <div class="form-title">
         <h1>Student Registration Form</h1>
     </div>
-    <form method="post">
+    <form method="post" action="http://localhost:3000/register">
         <fieldset>
             <legend>Personal Information</legend>
             <label for="name">Name:</label>

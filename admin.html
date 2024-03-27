@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <!-- Material UI CDN -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body { font-family: 'Roboto', sans-serif; }
+    .table { width: 100%; border-collapse: collapse; }
+    .table, .table th, .table td { border: 1px solid black; }
+    th, td { padding: 10px; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>Registered Students</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Telephone</th>
+        <th>Email</th>
+        <th>Course</th>
+      </tr>
+    </thead>
+    <tbody id="studentsTableBody">
+      <!-- Students data will be populated here -->
+    </tbody>
+  </table>
+
+  <script>
+    window.onload = function() {
+      fetch('http://localhost:3000/api/students')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          const tableBody = document.getElementById('studentsTableBody');
+          data.forEach(student => {
+            const row = `<tr>
+              <td>${student.name}</td>
+              <td>${student.dateOfBirth}</td>
+              <td>${student.gender}</td>
+              <td>${student.address}</td>
+              <td>${student.telephone}</td>
+              <td>${student.email}</td>
+              <td>${student.course}</td>
+            </tr>`;
+            tableBody.innerHTML += row;
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching students:', error.message, error.stack);
+          alert('Failed to load student data. Please check the console for more details.');
+        });
+    };
+  </script>
+</body>
+</html>
